@@ -2,13 +2,17 @@ def new_game():
     guesses = []
     correct_guesses = 0
     question_num = 1
+    guess_validation = ["A", "B", "C", "D"]
 
     for key in questions:
         print("---------------------")
         print(key)
         for i in options[question_num-1]:
             print(i)
-        guess = input(" Enter (A, B, C, or D): ").upper()
+        guess = None
+
+        while guess not in guess_validation:
+            guess = input(" Enter (A, B, C, or D): ").upper()
         guesses.append(guess)
 
         correct_guesses += check_answer(questions.get(key), guess)
@@ -22,7 +26,7 @@ def check_answer(answer, guess):
     else:
         print ("Wrong!")
         return 0
-def display_score(correct_guesses, guesses ):
+def display_score(correct_guesses, guesses):
     print("Results")
     
     print("Answers: ", end=" ")
@@ -40,8 +44,11 @@ def display_score(correct_guesses, guesses ):
     print(str(score) + "%")
 
 def play_again():
-    response = input(" Do you want to play again?: (yes or no) ").lower()
-
+    
+    play_again_validation = ["yes", "no"]
+    response = None
+    while response not in play_again_validation:
+        response = input(" Do you want to play again?: (yes or no) ").lower()
     if response == "yes":
         return True
     else:
