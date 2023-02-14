@@ -8,8 +8,13 @@ def new_game():
         print(key)
         for i in options[question_num-1]:
             print(i)
+        guess = input(" Enter (A, B, C, or D").upper()
+        guesses.append(guess)
 
-def check_answer():
+        check_answer(questions.get(key), guess)
+        question_num += 1
+
+def check_answer(answer, guess):
     pass
 def display_score():
     pass
