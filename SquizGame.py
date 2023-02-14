@@ -11,11 +11,16 @@ def new_game():
         guess = input(" Enter (A, B, C, or D").upper()
         guesses.append(guess)
 
-        check_answer(questions.get(key), guess)
+        correct_guesses += check_answer(questions.get(key), guess)
         question_num += 1
-
+    display_score(correct_guesses, guesses)
 def check_answer(answer, guess):
-    pass
+    if answer == guess:
+        print("Correct!")
+        return 1
+    else:
+        pritn ("Wrong!")
+        return 0
 def display_score():
     pass
 def play_again():
