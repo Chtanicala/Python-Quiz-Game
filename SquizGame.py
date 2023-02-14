@@ -40,7 +40,12 @@ def display_score(correct_guesses, guesses ):
     print(str(score) + "%")
 
 def play_again():
-    pass
+    response = input(" Do you want to play again?: (yes or no) ").lower()
+
+    if response == "yes":
+        return True
+    else:
+        return False
 
 #Use a dictionary to hold the questions and answers
 questions = {
@@ -54,3 +59,6 @@ options =   [["A: Dictionary", "B: 2DList", "C: Tuple", "D: Set"],
             ["A: 2DList", "B: Dictionary", "C: Set", "D: Tuple"]]
 
 new_game()
+
+while play_again():
+    new_game()
