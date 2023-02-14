@@ -1,5 +1,14 @@
 def new_game():
-    pass
+    guesses = []
+    correct_guesses = 0
+    question_num = 1
+
+    for key in questions:
+        print("---------------------")
+        print(key)
+        for i in options[question_num-1]:
+            print(i)
+
 def check_answer():
     pass
 def display_score():
@@ -17,3 +26,5 @@ questions = {
 options =   [["A: Dictionary", "B: 2DList", "C: Tuple", "D: Set"],
             ["A: Set", "B: Tuple", "C: 2DList", "D: Dictionary"],
             ["A: 2DList", "B: Dictionary", "C: Set", "D: Tuple"]]
+
+new_game()
